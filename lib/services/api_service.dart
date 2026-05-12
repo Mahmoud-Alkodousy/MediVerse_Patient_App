@@ -11,10 +11,11 @@ class ApiService {
   static Map<String, dynamic>? _user;
 
   static Map<String, String> get _headers => {
-        'Content-Type': 'application/json',
-        'ngrok-skip-browser-warning': 'true',
-        if (_token != null) 'Authorization': 'Bearer $_token',
-      };
+    'Content-Type': 'application/json',
+    'ngrok-skip-browser-warning': '1',
+    'User-Agent': 'MediVerseApp/1.0',
+    if (_token != null) 'Authorization': 'Bearer $_token',
+  };
 
   // ── Auth ──────────────────────────────────
   static Future<Map<String, dynamic>> loginWithNationalId(String nationalId) async {
